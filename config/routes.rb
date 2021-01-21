@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
 root 'company#index'
-  get 'company/index'
+get 'company/index'
 
 
   resources :company
