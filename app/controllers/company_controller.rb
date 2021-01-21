@@ -1,4 +1,6 @@
 class CompanyController < ApplicationController
+	before_action :find_company, only: [:show, :update, :edit, :destroy]
+  
   def index
   	@company= Company.all
   end
@@ -19,19 +21,15 @@ class CompanyController < ApplicationController
   end
 
   def edit
-  	@company= Company.find(params[:id])
   end
 
   def show
- 
   end
 
   def update
-  		if @company.update(company_params)
-			flash[:info] = "Tu registro ha sido actualizado"
-			redirect_to company_path(@company)
+   		if @company.update(company_params)
+			redirect_to root_path
 		else
-			flash[:danger] = "Ha ocurrido un error, revisa e intenta de nuevo." 
 			render 'edit'
 		end
   end
@@ -42,6 +40,9 @@ class CompanyController < ApplicationController
 	private
 	def company_params
 		params.require(:company).permit(:name_company, :controller, :phone, :email, :quantityoffice)
+	end
+	def find_company
+		@company = Company.find(params[:id])		
 	end
 
 end
