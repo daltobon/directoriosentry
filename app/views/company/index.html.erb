@@ -34,16 +34,18 @@
 		<td>Correo Electrónico</td>
 		<td>Teléfono</td>
 		<td>Cantidad de Sedes</td>
+		<td>Editar Aliado</td>
 	</tr>
 
-<% Company.all.each do |company| %>
+<% @company.each do |company| %>
 	<tr>
 		<td><%= link_to company.name_company, company.name_company %></td>
 		<td><%= company.controller %></td>
 		<td><%= company.email %></td>
 		<td class="text-center"><%= company.phone.round %></td>
 		<td class="text-center"><%= company.quantityoffice.round %></td>
-	</tr>
+		<td> <%= link_to 'Editar', edit_company_path(company) %></td> 
+     </tr>
 	<% end %>
 	
 </table>
