@@ -6,18 +6,17 @@
 		
 		<td>Interventor</td>
 		<td>Correo Electrónico</td>
-		<td>Teléfono</td>
-		<td>Cantidad de Sedes</td>
-		<td>Editar Aliado</td>
+		<td class="text-center">Teléfono</td>
+		<td class="text-center">Cantidad de Sedes</td>
+		<td class="text-center">Modificar</td>
 	</tr>
 
-	<tr>
-		
+	<tr>		
 		<td><%= @company.controller %></td>
 		<td><%= @company.email %></td>
 		<td class="text-center"><%= @company.phone.round %></td>
 		<td class="text-center"><%= @company.quantityoffice.round %></td>
-		<td> <%= link_to 'Editar', @company %></td> 
+		<td> <%= link_to 'Editar', edit_company_path(@company) , class: "btn btn-success" %></td> 
      </tr>
 	
 </table>

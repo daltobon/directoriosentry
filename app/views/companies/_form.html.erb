@@ -1,31 +1,32 @@
 <%= form_with model: @company do |c| %>
-<form class="form-group">
-	<div class="form-group form-control">
+<div class="col-offset-2">
+	
+	<form class="text-center form-group">
+	<div class="col-6">
 		<%= c.label 'Aliado Comercial' %><br>
-		<%= c.text_field :name_company, label: "Aliado Comercial" %>
+		<%= c.text_field :name_company, class: 'form-control' %>
 	</div>
-	<div class="form-group form-control">
+	<div class="col-6">
 		<%= c.label 'Interventor' %><br>
-		<%= c.text_field :controller%>
+		<%= c.text_field :controller, class: 'form-control'%>
 	</div>
 
-	<div class="form-group form-control">
+	<div class="col-6">
 		<%= c.label 'Teléfono' %><br>
-		<%= c.number_field :phone %>	
+		<%= c.number_field :phone, class: 'form-control' %>	
 	</div>
-	<div class="form-group form-control">
+	<div class="col-6">
 		<%= c.label 'Correo Electrónico' %><br>
-		<%= c.email_field :email %>
+		<%= c.email_field :email, class: 'form-control' %>
 	</div>
 
-	<div class="form-group form-control">	
+	<div class="col-6">	
 		<%= c.label 'Cantidad de Sedes' %><br>
-		<%= c.number_field :quantityoffice %>
+		<%= c.number_field :quantityoffice, class: 'form-control' %>
 	</div>
 	<div class="actions">
-		<%= c.submit 'Guardar'%>
+		<%= c.submit 'Guardar', class: 'btn btn-primary'  %>
 	</div>
 </form>
-	
-
 <% end %>
+</div>

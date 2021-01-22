@@ -1,14 +1,11 @@
 <h1>Contactos Aliados Comerciales</h1>
-<p>Lista de Aliados Comerciales</p>
-
 
 <% if @companies.count <= 0 %>
 
 <section class="section section-empty-container">
   <div class="section-empty">
     <div class="container has-text-centered">
-      <h1 class="title">No hay publicaciones para mostrar</h1>
-      <h2 class="subtitle">
+       <h2 class="subtitle">
         Sé el primero en  <strong><%= link_to("Crear una nuevo registro", new_company_path) %></strong>
       </h2>
     </div>
@@ -17,8 +14,8 @@
 
 <% else %>
 
-<%= link_to("Crear una nuevo registro", new_company_path) %>
-
+<%= link_to "Crear una nuevo registro", new_company_path , class: "btn btn-success" %>
+<hr>
 <table class="table table-striped table-hover">
 	<tr class="table-dark">
 		<td>Aliado comercial</td>
@@ -26,7 +23,6 @@
 		<td>Correo Electrónico</td>
 		<td class="text-center">Teléfono</td>
 		<td class="text-center">Cantidad de Sedes</td>
-		<td>Editar Aliado</td>
 	</tr>
 
 <% @companies.each do |company| %>
@@ -36,7 +32,7 @@
 		<td><%= mail_to company.email %></td>
 		<td class="text-center"><%= company.phone.round %></td>
 		<td class="text-center"><%= company.quantityoffice.round %></td>
-		<td> <%= link_to 'Editar', edit_company_path(company) %></td> 
+
      </tr>
 	<% end %>
 	
