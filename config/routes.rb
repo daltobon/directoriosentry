@@ -1,11 +1,19 @@
-
-
 Rails.application.routes.draw do
-root 'company#index'
-get 'company/index'
+  get 'companies/index'
 
+  get 'companies/show'
 
-  resources :company
+  get 'companies/new'
+
+  get 'companies/edit'
+
+  get 'companies/update'
+
+  get 'companies/destroy'
+
+root 'companies#index'
+
+  resources :companies
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
