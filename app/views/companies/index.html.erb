@@ -1,15 +1,31 @@
 <h1>Contactos Aliados Comerciales</h1>
 <p>Lista de Aliados Comerciales</p>
 
+
+<% if @posts.count <= 0 %>
+
+<section class="section section-empty-container">
+  <div class="section-empty">
+    <div class="container has-text-centered">
+      <h1 class="title">No hay publicaciones para mostrar</h1>
+      <h2 class="subtitle">
+        Sé el primero en  <strong><%= link_to("Crear una nuevo registro", new_company_path) %></strong>
+      </h2>
+    </div>
+  </div>  
+</section>
+
+<% else %>
+
 <%= link_to("Crear una nuevo registro", new_company_path) %>
 
 <table class="table table-striped table-hover">
-	<tr class="table-dark text-center">
+	<tr class="table-dark">
 		<td>Aliado comercial</td>
 		<td>Interventor</td>
 		<td>Correo Electrónico</td>
-		<td>Teléfono</td>
-		<td>Cantidad de Sedes</td>
+		<td class="text-center">Teléfono</td>
+		<td class="text-center">Cantidad de Sedes</td>
 		<td>Editar Aliado</td>
 	</tr>
 
@@ -17,7 +33,7 @@
 	<tr>
 		<td><%= link_to company.name_company, company_path(company) %></td>
 		<td><%= company.controller %></td>
-		<td><%= company.email %></td>
+		<td><%= mail_to company.email %></td>
 		<td class="text-center"><%= company.phone.round %></td>
 		<td class="text-center"><%= company.quantityoffice.round %></td>
 		<td> <%= link_to 'Editar', edit_company_path(company) %></td> 
@@ -26,6 +42,5 @@
 	
 </table>
 
-
-
+<% end %>
 
