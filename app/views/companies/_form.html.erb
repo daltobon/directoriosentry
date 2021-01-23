@@ -1,6 +1,5 @@
 <%= form_with model: @company do |c| %>
-<div class="col-offset-2">
-	
+<div class="col-offset-2 row">
 	<form class="text-center form-group">
 	<div class="col-6">
 		<%= c.label 'Aliado Comercial' %><br>
@@ -24,9 +23,9 @@
 		<%= c.label 'Cantidad de Sedes' %><br>
 		<%= c.number_field :quantityoffice, class: 'form-control' %>
 	</div>
-	<div class="actions">
+	<div class="actions d-block text-end mt-3">
 		<%= c.submit 'Guardar', class: 'btn btn-primary'  %>
 	</div>
 </form>
-<% end %>
 </div>
+<% end %>

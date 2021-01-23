@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "http://github.com/#{repo_name}.git"
 end
-ruby "2.6.6"
+ruby "2.7.2"
 
 gem 'rails', '~> 5.1.3'
 gem 'puma', '~> 3.7'
