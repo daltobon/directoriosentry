@@ -37,7 +37,7 @@ class CompaniesController < ApplicationController
 
 private
 	  def company_params
-			params.require(:company).permit(:name_company, :controller, :phone, :email, :quantityoffice)
+			params.require(:company).permit(:name_company, :controller, :phone, :email, :quantityoffice, :cellphone)
 	  end
   	  def find_company
 		@company = Company.find(params[:id])		

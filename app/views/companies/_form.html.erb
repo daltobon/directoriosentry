@@ -9,10 +9,13 @@
 		<%= c.label 'Interventor' %><br>
 		<%= c.text_field :controller, class: 'form-control'%>
 	</div>
-
 	<div class="col-6">
-		<%= c.label 'Teléfono' %><br>
-		<%= c.number_field :phone, class: 'form-control' %>	
+		<%= c.label 'Teléfono Fijo' %><br>
+		<%= c.text_field :phone, class: 'form-control' %>	
+	</div>
+	<div class="col-6">
+		<%= c.label 'Teléfono Celular' %><br>
+		<%= c.text_field :cellphone, class: 'form-control' %>
 	</div>
 	<div class="col-6">
 		<%= c.label 'Correo Electrónico' %><br>

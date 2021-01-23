@@ -14,7 +14,29 @@
 
 <% else %>
 
-<%= link_to "Crear nuevo registro", new_company_path , class: "btn btn-danger" %>
+<style type="text/css">
+  .boton_personalizado {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #ffffff;
+    border-radius: 8px;
+    background-color: #be0811;
+    text-decoration:none;
+}
+</style>
+
+<%= link_to "Crear nuevo registro", new_company_path , class: 'btn boton_personalizado' %>
 <hr>
 <table class="table table-striped table-hover">
 	<tr class="table-danger">
@@ -22,6 +44,7 @@
 		<td>Interventor</td>
 		<td>Correo Electrónico</td>
 		<td class="text-center">Teléfono</td>
+		<td class="text-center">Celular</td>	
 		<td class="text-center">Cantidad de Sedes</td>
 	</tr>
 
@@ -30,7 +53,8 @@
 		<td><%= link_to company.name_company, company_path(company) %></td>
 		<td><%= company.controller %></td>
 		<td><%= mail_to company.email %></td>
-		<td class="text-center"><%= company.phone.round %></td>
+		<td class="text-center"><%= company.phone %></td>
+		<td><%= company.cellphone %></td>
 		<td class="text-center"><%= company.quantityoffice.round %></td>
      </tr>
 	<% end %>
