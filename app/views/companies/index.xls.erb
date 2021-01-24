@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Nombre</Data></Cell>
+        <Cell><Data ss:Type="String">Interventor</Data></Cell>
+        <Cell><Data ss:Type="String">Correo Electrónico</Data></Cell>
+        <Cell><Data ss:Type="String">Teléfono</Data></Cell>
+        <Cell><Data ss:Type="String">Celular</Data></Cell>
+        <Cell><Data ss:Type="String">Cantidad de sedes</Data></Cell>
+      </Row>
+    <% @companies.each do |company| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= company.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= company.name_company %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= company.controller %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= company.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= company.phone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= company.cellphone %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= company.quantityoffice %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
