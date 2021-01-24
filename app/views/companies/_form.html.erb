@@ -1,34 +1,60 @@
+<style>
+	.inputicon input {
+		padding-left: 40px;
+	}
+	.inputicon {
+		position: relative;
+	}
+
+	.inputicon i {
+		position: absolute;
+		left:auto;
+		top:0px;
+		padding: 8px;
+		font-size: 15erm;
+		color: #be0811;
+	}
+</style>
+
 <%= form_with model: @company do |c| %>
 <div class="col-offset-2 row">
 	<form class="text-center form-group">
-	<div class="col-6">
-		<%= c.label 'Aliado Comercial' %><br>
-		<%= c.text_field :name_company, class: 'form-control' %>
-	</div>
-	<div class="col-6">
-		<%= c.label 'Interventor' %><br>
-		<%= c.text_field :controller, class: 'form-control'%>
-	</div>
-	<div class="col-6">
-		<%= c.label 'Teléfono Fijo' %><br>
-		<%= c.text_field :phone, class: 'form-control' %>	
-	</div>
-	<div class="col-6">
-		<%= c.label 'Teléfono Celular' %><br>
-		<%= c.text_field :cellphone, class: 'form-control' %>
-	</div>
-	<div class="col-6">
-		<%= c.label 'Correo Electrónico' %><br>
-		<%= c.email_field :email, class: 'form-control' %>
+
+	<div class="col-6 mt-2 inputicon">
+		<%= c.text_field :name_company, class: 'form-control', placeholder:"Aliado Comercial"  %>
+		<i class="bi bi-briefcase-fill"></i>
 	</div>
 
-	<div class="col-6">	
-		<%= c.label 'Cantidad de Sedes' %><br>
-		<%= c.number_field :quantityoffice, class: 'form-control' %>
+	<div class="col-6 mt-2 inputicon">
+		<%= c.text_field :controller, class: 'form-control',placeholder:"Interventor"%>
+		<i class="bi bi-person-lines-fill"></i>
 	</div>
+
+	<div class="col-6 mt-2 inputicon">
+		<%= c.text_field :phone, class: 'form-control', placeholder:"Teléfono" %>
+		<i class="bi bi-telephone-fill"></i>	
+	</div>
+
+	<div class="col-6 mt-2 inputicon">
+		<%= c.text_field :cellphone, class: 'form-control', placeholder:"Teléfono Celular" %>
+		<i class="bi bi-phone-fill"></i>
+	</div>
+
+	<div class="col-6 mt-2 inputicon">
+		<%= c.email_field :email, class: 'form-control', placeholder:"Correo Electrónico" %>
+		<i class="bi bi-envelope-open-fill"></i>
+	</div>
+
+	<div class="col-6 mt-2 inputicon">	
+		<%= c.number_field :quantityoffice, class: 'form-control', placeholder:"Cantidad de Sedes" %>
+		<i class="bi bi-geo-alt-fill"></i>
+	</div>
+
 	<div class="actions d-block text-end mt-3">
 		<%= c.submit 'Guardar', class: 'btn btn-primary'  %>
+
 	</div>
+
 </form>
 </div>
 <% end %>
