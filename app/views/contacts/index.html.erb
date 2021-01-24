@@ -1,0 +1,58 @@
+<style type="text/css">
+  .boton_personalizado {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #ffffff;
+    border-radius: 8px;
+    background-color: #be0811;
+    text-decoration:none;
+}
+a {
+	text-decoration: none;
+}
+</style>
+
+<h2 class="text-muted mt-5"><span class="bi bi-file-earmark-person-fill"></span> Lista de Contactos</h2>
+
+<div class="d-block text-end">
+  <%= link_to " Añadir Contactos", new_contact_path , class: 'bi bi-plus-square-fill btn boton_personalizado' %>
+</div>
+
+<table class="table mt-3 table-striped table-hover">
+	<tr class="table-dark">
+		<td>Nombre</td>
+		<td class="text-center">Sede / Oficina</td>
+		<td class="text-center">Ocupación</td>
+		<td class="text-center">Celular</td>
+		<td>Correo Electrónico</td>		
+		<td class="text-center">Modificar</td>			
+	</tr>
+
+	<% @contacts.each do |contact| %>
+	<tr>		
+		<td><%= contact.name %></td>
+		<td class="text-center"><%= contact.office %></td>
+		<td class="text-center"><%= contact.position %></td>		
+		<td class="text-center"><%= contact.phone %></td>
+		<td><%= contact.email %></td>		
+		<td class="text-center"> <%= link_to '', edit_contact_path(contact) , class: "bi bi-pencil-fill" %></td> 
+     </tr>
+<% end %>
+</table>
+
+<p class="text-end">
+  Descargar Datos:
+  <%= link_to "CSV", contacts_path(format: "csv") %> |
+  <%= link_to "Excel", contacts_path(format: "xls") %>
+</p>

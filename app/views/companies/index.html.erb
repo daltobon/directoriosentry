@@ -23,7 +23,7 @@ a {
 }
 </style>
 
-<h1>Contactos Aliados Comerciales</h1>
+<h3 class="mt-5 text-muted"><span class="bi bi-briefcase-fill"></span> Aliados Comerciales</h3>
 
 <% if @companies.count <= 0 %>
 
@@ -43,8 +43,7 @@ a {
 	<%= link_to " Añadir A.C", new_company_path , class: 'bi bi-plus-square-fill btn boton_personalizado' %>
 </div>
 
-<hr>
-<table class="table table-striped table-hover">
+<table class="table mt-3 table-striped table-hover">
 	<tr class="table-danger">
 		<td>Aliado comercial</td>
 		<td>Interventor</td>

@@ -1,0 +1,52 @@
+<style>
+	.inputicon input {
+		padding-left: 40px;
+	}
+	.inputicon {
+		position: relative;
+	}
+
+	.inputicon i {
+		position: absolute;
+		left:auto;
+		top:0px;
+		padding: 8px;
+		font-size: 15erm;
+		color: #be0811;
+	}
+</style>
+
+<%= form_with model: @contact do |c| %>
+<div class="col-offset-2 mt-5 row">
+	<form class="text-center form-group">
+
+	<div class="col-6 mt-2 inputicon">
+		<%= c.text_field :name, class: 'form-control', placeholder:"Nombre"  %>
+		<i class="bi bi-person-lines-fill"></i>
+	</div>
+	<div class="col-6 mt-2 inputicon">
+		<%= c.text_field :position, class: 'form-control', placeholder:"Cargo"  %>
+		<i class="bi bi-person-lines-fill"></i>
+	</div>
+	<div class="col-6 mt-2 inputicon">
+		<%= c.text_field :phone, class: 'form-control', placeholder:"Teléfono Celular" %>
+		<i class="bi bi-phone-fill"></i>
+	</div>
+
+	<div class="col-6 mt-2 inputicon">
+		<%= c.email_field :email, class: 'form-control', placeholder:"Correo Electrónico" %>
+		<i class="bi bi-envelope-open-fill"></i>
+	</div>
+
+	<div class="col-6 mt-2 inputicon">	
+		<%= c.text_field :office, class: 'form-control', placeholder:"Sede" %>
+		<i class="bi bi-geo-alt-fill"></i>
+	</div>
+
+	<div class="actions d-block text-end mt-3">
+		<%= c.submit 'Guardar', class: 'btn btn-primary'  %>
+
+	</div>
+</form>
+</div>
+<% end %>

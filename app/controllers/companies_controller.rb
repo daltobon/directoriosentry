@@ -5,13 +5,14 @@ class CompaniesController < ApplicationController
   	@companies= Company.all
   	@companies = Company.order(:name_company)
 	 respond_to do |format|
-	    format.html
-	    format.csv { send_data @companies.to_csv }
+	    format.html 
+	    format.csv { send_data @companies.to_csv encoding:'ISO-8859-1' }
 	    format.xls
 	  end
 end
 
   def show
+  	@contacts= Contact.all
   end
 
   def new

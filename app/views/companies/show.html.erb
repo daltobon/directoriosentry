@@ -22,3 +22,26 @@
      </tr>
 	
 </table>
+
+
+
+<table class="table table-striped table-hover">
+	<tr class="table-dark">		
+		<td>Nombre</td>
+		<td class="text-center">Cargo</td>
+		<td>Correo Electrónico</td>
+		<td class="text-center">Celular</td>
+		<td class="text-center">Sede</td>
+		<td class="text-center">Modificar</td>			
+	</tr>
+<% @contacts.each do |contact| %>
+	<tr>		
+		<td><%= contact.name %></td>
+		<td><%= contact.position %></td>
+		<td class="text-center"><%= contact.email %></td>
+		<td class="text-center"><%= contact.phone %></td>
+		<td class="text-center"><%= contact.office %></td>
+		<td class="text-center"> <%= link_to '', edit_contact_path(contact) , class: "bi bi-pencil-fill" %></td> 
+     </tr>
+     <% end %>	
+</table>
