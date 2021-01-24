@@ -3,7 +3,13 @@ class CompaniesController < ApplicationController
   
   def index
   	@companies= Company.all
-  end
+  	@companies = Company.order(:name_company)
+	 respond_to do |format|
+	    format.html
+	    format.csv { send_data @companies.to_csv }
+	    format.xls
+	  end
+end
 
   def show
   end
@@ -39,8 +45,8 @@ private
 	  def company_params
 			params.require(:company).permit(:name_company, :controller, :phone, :email, :quantityoffice, :cellphone)
 	  end
+
   	  def find_company
 		@company = Company.find(params[:id])		
 	  end
-
 end
