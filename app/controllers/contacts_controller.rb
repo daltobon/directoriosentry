@@ -43,7 +43,7 @@ class ContactsController < ApplicationController
 
 private
 	  def contact_params
-			params.require(:contact).permit(:name, :phone, :email, :office, :position)
+			params.require(:contact).permit(:name, :phone, :cellphone, :email, :office, :position)
 	  end
 
   	def find_contact

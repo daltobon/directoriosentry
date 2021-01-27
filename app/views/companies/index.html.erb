@@ -1,29 +1,5 @@
-<style type="text/css">
-  .boton_personalizado {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 20px;
-    font-weight: normal;
-    line-height: 1.428571429;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    color: #ffffff;
-    border-radius: 8px;
-    background-color: #be0811;
-    text-decoration:none;
-}
-a {
-	text-decoration: none;
-}
-</style>
-
-<h3 class="mt-5 text-muted"><span class="bi bi-briefcase-fill"></span> Aliados Comerciales</h3>
+<h1 class="mt-5 text-muted"><span class="bi bi-briefcase-fill"></span> Aliados Comerciales</h1>
+<hr>
 
 <% if @companies.count <= 0 %>
 
@@ -43,14 +19,14 @@ a {
 	<%= link_to " Añadir A.C", new_company_path , class: 'bi bi-plus-square-fill btn boton_personalizado' %>
 </div>
 
-<table class="table mt-3 table-striped table-hover">
-	<tr class="table-danger">
-		<td>Aliado comercial</td>
-		<td>Interventor</td>
-		<td>Correo Electrónico</td>
-		<td class="text-center">Teléfono</td>
-		<td class="text-center">Celular</td>	
-		<td class="text-center">Cantidad de Sedes</td>
+<table class="table mt-3 table-striped table-hover table-sm table-responsive table-bordered">
+	<tr class="table-info">
+		<td class="fw-bold">Aliado comercial</td>
+		<td class="fw-bold">Interventor</td>
+		<td class="fw-bold">Correo Electrónico</td>
+		<td class="fw-bold text-center">Teléfono</td>
+		<td class="fw-bold text-center">Celular</td>	
+		<td class="fw-bold text-center">Cantidad de Sedes</td>
 	</tr>
 
 <% @companies.each do |company| %>

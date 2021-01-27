@@ -9,7 +9,7 @@ class CompaniesController < ApplicationController
 	    format.csv { send_data @companies.to_csv encoding:'ISO-8859-1' }
 	    format.xls
 	  end
-end
+  end
 
   def show
   	@contacts= Contact.all

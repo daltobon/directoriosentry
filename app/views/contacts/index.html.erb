@@ -1,41 +1,18 @@
-<style type="text/css">
-  .boton_personalizado {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 20px;
-    font-weight: normal;
-    line-height: 1.428571429;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    color: #ffffff;
-    border-radius: 8px;
-    background-color: #be0811;
-    text-decoration:none;
-}
-a {
-	text-decoration: none;
-}
-</style>
-
-<h2 class="text-muted mt-5"><span class="bi bi-file-earmark-person-fill"></span> Lista de Contactos</h2>
+<h1 class="text-muted mt-5"><span class="bi bi-file-earmark-person-fill"></span> Lista de Contactos</h1>
+<hr>
 
 <div class="d-block text-end">
   <%= link_to " Añadir Contactos", new_contact_path , class: 'bi bi-plus-square-fill btn boton_personalizado' %>
 </div>
 
-<table class="table mt-3 table-striped table-hover">
+<table class="table mt-3 table-striped table-hover table-sm">
 	<tr class="table-dark">
 		<td>Nombre</td>
 		<td class="text-center">Sede / Oficina</td>
 		<td class="text-center">Ocupación</td>
+		<td class="text-center">Teléfono</td>
 		<td class="text-center">Celular</td>
-		<td>Correo Electrónico</td>		
+		<td class="text-center">Correo Electrónico</td>		
 		<td class="text-center">Modificar</td>			
 	</tr>
 
@@ -43,9 +20,10 @@ a {
 	<tr>		
 		<td><%= contact.name %></td>
 		<td class="text-center"><%= contact.office %></td>
-		<td class="text-center"><%= contact.position %></td>		
-		<td class="text-center"><%= contact.phone %></td>
-		<td><%= contact.email %></td>		
+		<td class="text-center"><%= contact.position %></td>
+		<td class="text-center"><%= link_to contact.phone, "tel:#{contact.phone}" %></td>
+		<td class="text-center"><%= link_to contact.cellphone, "tel:#{contact.cellphone}" %></td>
+		<td><%= mail_to contact.email %></td>		
 		<td class="text-center"> <%= link_to '', edit_contact_path(contact) , class: "bi bi-pencil-fill" %></td> 
      </tr>
 <% end %>

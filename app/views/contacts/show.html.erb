@@ -1,6 +1,6 @@
-<h1><%= @contact.name %></h1>
 
-<table class="table table-striped table-hover">
+
+<!--<table class="table table-striped table-hover">
 	<tr class="table-dark">
 		
 		<td>Nombre</td>
@@ -19,4 +19,17 @@
 		<td class="text-center"><%= @contact.office %></td>
 		<td class="text-center"> <%= link_to '', edit_contact_path(@contact) , class: "bi bi-pencil-fill" %></td> 
      </tr>	
-</table>
+</table>-->
+
+<div class="card border-secondary mb-3 mt-5" style="max-width: 30rem;">
+  <div class="card-header text-center"><h1><%= @contact.name %></h1>
+   <h4 class="card-title text-center"><i class="bi bi-diagram-3-fill"></i> <%=  @contact.position %></h4></div>
+  <div class="card-body text-secondary">
+    <h3 class="card-title"><i class="bi bi-phone-fill"></i> <%= @contact.cellphone %></h3>
+   
+    <hr>
+    <p class="card-text"><i class="bi bi-envelope-open-fill"></i> <%= mail_to @contact.email %></p>
+    <p class="card-text"><i class="bi bi-telephone-fill"></i> <%= link_to @contact.phone, "tel:#{@contact.phone}" %></p>
+    <p class="card-text"><i class="bi bi-geo-alt-fill"></i> <%= @contact.office %></p>
+  </div>
+</div>
