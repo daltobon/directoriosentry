@@ -22,7 +22,7 @@
 </table>-->
 
 <div class="card border-secondary mb-3 mt-5" style="max-width: 30rem;">
-  <div class="card-header text-center"><h1><%= @contact.name %></h1>
+  <div class="card-header text-center"><h1><%= @contact.name.titleize %></h1>
    <h4 class="card-title text-center"><i class="bi bi-diagram-3-fill"></i> <%=  @contact.position %></h4></div>
   <div class="card-body text-secondary">
     <h3 class="card-title"><i class="bi bi-phone-fill"></i> <%= @contact.cellphone %></h3>

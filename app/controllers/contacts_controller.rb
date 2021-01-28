@@ -47,6 +47,6 @@ private
 	  end
 
   	def find_contact
-		  @contact = Contact.find(params[:id])		
+		  @contact = Contact.friendly.find(params[:id])		
 	  end
 end

@@ -31,7 +31,7 @@
 
 <% @companies.each do |company| %>
 	<tr>
-		<td><%= link_to company.name_company, company_path(company) %></td>
+		<td><%= link_to company.name_company.upcase, company_path(company) %></td>
 		<td><%= company.controller.titleize %></td>
 		<td><%= mail_to company.email.downcase %></td>
 		<td class="text-center"><%= company.phone %></td>
@@ -43,8 +43,8 @@
 
 <p class="text-end">
   Descargar Datos:
-  <%= link_to "CSV", companies_path(format: "csv") %> |
-  <%= link_to "Excel", companies_path(format: "xls") %>
+  <%= link_to "CSV", companies_path(format: "csv"), class: 'bi bi-file-spreadsheet' %> 
+  <%= link_to "Excel", companies_path(format: "xls"), class: 'bi bi-file-earmark-spreadsheet' %>
 </p>
 
 <% end %>

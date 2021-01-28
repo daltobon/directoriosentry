@@ -18,8 +18,8 @@
 
 	<% @contacts.each do |contact| %>
 	<tr>		
-		<td><%= contact.name %></td>
-		<td class="text-center"><%= contact.office %></td>
+		<td><%= contact.name.titleize %></td>
+		<td class="text-center"><%= contact.office.titleize %></td>
 		<td class="text-center"><%= contact.position %></td>
 		<td class="text-center"><%= link_to contact.phone, "tel:#{contact.phone}" %></td>
 		<td class="text-center"><%= link_to contact.cellphone, "tel:#{contact.cellphone}" %></td>
@@ -31,6 +31,6 @@
 
 <p class="text-end">
   Descargar Datos:
-  <%= link_to "CSV", contacts_path(format: "csv") %> |
-  <%= link_to "Excel", contacts_path(format: "xls") %>
+  <%= link_to "CSV", companies_path(format: "csv"), class: 'bi bi-file-spreadsheet' %> 
+  <%= link_to "Excel", companies_path(format: "xls"), class: 'bi bi-file-earmark-spreadsheet' %>
 </p>
