@@ -5,32 +5,32 @@
   <%= link_to " Añadir Contactos", new_contact_path , class: 'bi bi-plus-square-fill btn boton_personalizado' %>
 </div>
 
-<table class="table mt-3 table-striped table-hover table-sm">
-	<tr class="table-dark">
-		<td>Nombre</td>
-		<td class="text-center">Sede / Oficina</td>
-		<td class="text-center">Ocupación</td>
-		<td class="text-center">Teléfono</td>
-		<td class="text-center">Celular</td>
-		<td class="text-center">Correo Electrónico</td>		
-		<td class="text-center">Modificar</td>			
+<div class="table table-responsive">
+	<table class="table mt-2 table-striped table-hover table-sm  table-bordered">
+	<tr class="bg-dark text-light">		
+		<td class="fw-bold ">Nombre</td>
+		<td class="fw-bold text-center">Cargo</td>
+		<td class="fw-bold text-center">Correo Electrónico</td>
+		<td class="fw-bold text-center">Teléfono</td>
+		<td class="fw-bold text-center">Celular</td>
+		<td class="fw-bold text-center">Sede</td>
+		<td class="fw-bold text-center">Modificar</td>			
 	</tr>
-
-	<% @contacts.each do |contact| %>
+<% @contacts.each do |contact| %>
 	<tr>		
-		<td><%= contact.name.titleize %></td>
-		<td class="text-center"><%= contact.office.titleize %></td>
-		<td class="text-center"><%= contact.position %></td>
+		<td><%= link_to contact.name.titleize, contact %></td>
+		<td><%= contact.position %></td>
+		<td><%= mail_to contact.email %></td>
 		<td class="text-center"><%= link_to contact.phone, "tel:#{contact.phone}" %></td>
 		<td class="text-center"><%= link_to contact.cellphone, "tel:#{contact.cellphone}" %></td>
-		<td><%= mail_to contact.email %></td>		
+		<td class="text-center"><%= contact.office %></td>
 		<td class="text-center"> <%= link_to '', edit_contact_path(contact) , class: "bi bi-pencil-fill" %></td> 
      </tr>
-<% end %>
+     <% end %>	
 </table>
-
+</div>
 <p class="text-end">
-  Descargar Datos:
+  <span class="fw-bold">Descargar Datos: </span>
   <%= link_to "CSV", companies_path(format: "csv"), class: 'bi bi-file-spreadsheet' %> 
   <%= link_to "Excel", companies_path(format: "xls"), class: 'bi bi-file-earmark-spreadsheet' %>
 </p>

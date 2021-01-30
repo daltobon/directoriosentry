@@ -18,9 +18,9 @@
 <div class="d-block text-end">
 	<%= link_to " Añadir A.C", new_company_path , class: 'bi bi-plus-square-fill btn boton_personalizado' %>
 </div>
-
-<table class="table mt-3 table-striped table-hover table-sm table-responsive table-bordered">
-	<tr class="table-info">
+<div class="table table-responsive">
+	<table class="table mt-2 table-striped table-hover table-sm  table-bordered">
+	<tr class="bg-dark text-light">
 		<td class="fw-bold">Aliado comercial</td>
 		<td class="fw-bold">Interventor</td>
 		<td class="fw-bold">Correo Electrónico</td>
@@ -40,9 +40,10 @@
      </tr>
 	<% end %>
 </table>
+</div>
 
 <p class="text-end">
-  Descargar Datos:
+  <span class="fw-bold">Descargar Datos: </span>
   <%= link_to "CSV", companies_path(format: "csv"), class: 'bi bi-file-spreadsheet' %> 
   <%= link_to "Excel", companies_path(format: "xls"), class: 'bi bi-file-earmark-spreadsheet' %>
 </p>

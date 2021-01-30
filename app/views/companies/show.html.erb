@@ -1,11 +1,14 @@
+<h1 class="text-muted mt-5"><span class="bi bi-briefcase-fill"></span> <%= @company.name_company.upcase %></h1>
+<a href="https://sistemasentry.com.co">Juntos diseñamos Salas de Atención Impactantes</a>
 <hr>
-<h1 class="text-center"><%= @company.name_company.upcase %></h1>
+
+<h1 class="text-center"></h1>
 
 <table class="table table-striped table-hover">
-	<tr class="table-dark">
+	<tr class="table-danger">
 		
 		<td>Interventor</td>
-		<td>Correo Electrónico</td>
+		<td class="text-center">Correo Electrónico</td>
 		<td class="text-center">Teléfono</td>
 		<td class="text-center">Celular</td>
 		<td class="text-center">Cantidad de Sedes</td>
@@ -14,7 +17,7 @@
 
 	<tr>		
 		<td><%= @company.controller.titleize %></td>
-		<td><%= @company.email %></td>
+		<td class="text-center"><%= @company.email %></td>
 		<td class="text-center"><%= @company.phone %></td>
 		<td class="text-center"><%= @company.cellphone %></td>
 		<td class="text-center"><%= @company.quantityoffice.round %></td>
@@ -26,17 +29,19 @@
 	<tr class="table-dark">		
 		<td>Nombre</td>
 		<td class="text-center">Cargo</td>
-		<td>Correo Electrónico</td>
+		<td class="text-center">Correo Electrónico</td>
+		<td class="text-center">Teléfono</td>
 		<td class="text-center">Celular</td>
 		<td class="text-center">Sede</td>
 		<td class="text-center">Modificar</td>			
 	</tr>
 <% @contacts.each do |contact| %>
 	<tr>		
-		<td><%= contact.name.titleize %></td>
+		<td><%= link_to contact.name.titleize, contact %></td>
 		<td><%= contact.position %></td>
-		<td class="text-center"><%= contact.email %></td>
+		<td><%= contact.email %></td>
 		<td class="text-center"><%= contact.phone %></td>
+		<td class="text-center"><%= contact.cellphone %></td>
 		<td class="text-center"><%= contact.office %></td>
 		<td class="text-center"> <%= link_to '', edit_contact_path(contact) , class: "bi bi-pencil-fill" %></td> 
      </tr>
